@@ -45,5 +45,5 @@ while True:
             waiting_times = 15+randint(0,40)
             print(waiting_times)
             time.sleep(waiting_times)
-    except:
+    except: 
         lineNotifyMessage(token,errorMsg)
