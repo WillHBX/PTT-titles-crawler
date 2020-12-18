@@ -135,9 +135,9 @@ void RBT::L_rotate(NODE *cur)
 	y->parent = cur->parent;			
 	if (cur->parent = nil)
 		root = y;
-	else if (cur == cur->parent->left)	// ­Y­ì¥»cur¬Oleft child
+	else if (cur == cur->parent->left)	// è‹¥åŸæœ¬curæ˜¯left child
 		cur->parent->left = y;			
-	else                                // ­Y­ì¥»cur¬Oright child
+	else                                // è‹¥åŸæœ¬curæ˜¯right child
 		cur->parent->right = y;
 
 	y->left = cur;
@@ -165,9 +165,9 @@ void RBT::R_rotate(NODE *cur)
 	y->parent = cur->parent;			
 	if (cur->parent = nil)
 		root = y;
-	else if (cur == cur->parent->right)	// ­Y­ì¥»cur¬Oleft child
+	else if (cur == cur->parent->right)	// è‹¥åŸæœ¬curæ˜¯left child
 		cur->parent->left = y;
-	else                                // ­Y­ì¥»cur¬Oright child
+	else                                // è‹¥åŸæœ¬curæ˜¯right child
 		cur->parent->right = y;
 
 	y->left = cur;
@@ -214,7 +214,7 @@ void RBT::insert_adjust(NODE *cur)
 				cur = cur->parent->parent;
 			}
 			else {
-				if (cur == cur->parent->parent->right) {
+				if (cur == cur->parent->right) {
 					cur = cur->parent;
 					L_rotate(cur);
 				}
@@ -232,7 +232,7 @@ void RBT::insert_adjust(NODE *cur)
 				cur = cur->parent->parent;
 			}
 			else {
-				if (cur == cur->parent->parent->left) {
+				if (cur == cur->parent->left) {
 					cur = cur->parent;
 					R_rotate(cur);
 				}
